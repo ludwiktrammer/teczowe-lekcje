@@ -3,7 +3,7 @@ author: dr hab. Grzegorz Iniewicz, prof. UJ
 title: Stres mniejszościowy a zdrowie u osób homoseksualnych i biseksualnych
 subjects:
   - wiedza o społeczeństwie
-  - historia
+  - biologia
 pdf: Konspekt lekcji Stres mniejszosciowy.pdf
 pdf2: Iniewicz Stres mniejszosciowy.pdf
 ---
