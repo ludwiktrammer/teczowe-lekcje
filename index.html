@@ -30,7 +30,7 @@ title: Tęczowe Lekcje
   </p>
 </div>
 
-<img src="/assets/img/divider.png" class="divider" alt="">
+<img src="{{ "/assets/img/divider.png" | relative_url }}" class="divider" alt="">
 
 {% assign subjects = "" | split:"|" %}
 
@@ -60,13 +60,13 @@ title: Tęczowe Lekcje
             {{ lesson.content | markdownify}}
             </div>
             <div>
-                <a class="download" target="_blank" href="/assets/pdf/{{ lesson.pdf | uri_escape }}">
+                <a class="download" target="_blank" href="{{ "/assets/pdf/" | relative_url }}{{ lesson.pdf | uri_escape }}">
                 → POBIERZ SCENARIUSZ
                 </a>
             </div>
             {% if lesson.pdf2 %}
                 <div>
-                    <a class="download" target="_blank" href="/assets/pdf/{{ lesson.pdf2 | uri_escape }}">
+                    <a class="download" target="_blank" href="{{ "/assets/pdf/" | relative_url }}{{ lesson.pdf2 | uri_escape }}">
                         → pobierz materiały
                     </a>
                 </div>
