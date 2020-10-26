@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3964485, 2020-10-23T17:51:43-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: ChalkHandMarker-Reg by TypoGraphicDesign
+ * URL: https://www.myfonts.com/fonts/typographicdesign/chalk-hand-marker/reg/
+ * Copyright: Copyright © 2020 by Manuel Viergutz | Typo Graphic Design. All rights reserved.
+ * 
+ * 
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3c7e45");
+  
+@font-face {
+  font-family: 'ChalkHandMarker-Reg';
+  src: url('/assets/fonts/ChalkHandMarker-Reg/font.woff2') format('woff2'), url('/assets/fonts/ChalkHandMarker-Reg/font.woff') format('woff');
+}
+

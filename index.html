@@ -1,0 +1,78 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+title: Tęczowe Lekcje
+---
+
+<div class="header-wrapper">
+  <h1>
+    TĘCZOWE Lekcje
+  </h1>
+</div>
+
+<div class="forward">
+  <p>
+  Przedstawiamy Wam propozycje lekcji dla szkół średnich na „Tęczowy Piątek” – i na każdy inny dzień w roku. Propozycje te przygotowały_li profesorki i profesorowie uniwersytetów, nauczycielki i nauczyciele, z Polski i z uczelni zagranicznych. Mamy nadzieję, że może się Wam te lekcje spodobają i przydadzą. Model otwartej, przyjaznej osobom LGBT+ szkoły jest dzisiaj celem ataków – a to właśnie w szkole uczymy się, jak być razem tak, by się wspierać, nie krzywdzić. Chcemy, żebyście wiedziały i wiedzieli, że ludzie Uniwersytetu są z Wami, z każdą osobą LGBT+ uczącą się teraz w szkole i ze wszystkimi dzielnymi nauczycielkami i nauczycielami, którzy chcą zadbać o to, by szkoła stała się dla młodzieży LGBT+ przyjaznym miejscem.
+  </p>
+
+  <p>
+  Lekcje możecie przeprowadzić w szkole, ale też, jeśli okaże się to niemożliwe, możecie zorganizować grupy samokształceniowe. Każda lekcja zawiera teksty i materiały do wspólnego pomyślenia i przedyskutowania. A wspólne myślenie jest formą oporu wobec zła.
+  </p>
+
+  <p>
+  Zamieszczone tu lekcje poświęcone osobom LGBT+ oraz problematyce gender wykorzystują badania prowadzone przez autorki i autorów. Chcemy chociaż w ten sposób być z Wami w szkołach, chcemy służyć Wam wiedzą i wynikami prac naukowych. Jesteśmy też ciekawi Waszych pomysłów i Waszych doświadczeń dydaktycznych – prosimy nauczycielki i nauczycieli o podzielenie się z nami własnymi scenariuszami lekcji. Wyślijcie je nam na nasz adres kontaktowy, postaramy się zamieszczać je na tej stronie. Wspólnie stworzymy w ten sposób wirtualną bibliotekę materiałów edukacyjnych.
+  </p>
+
+  <p>
+  Przede wszystkim jednak chcemy, żeby każda osoba LGBT+, która uczy się teraz w szkole i być może przeżywa trudne chwile, boi się, cierpi, nie widzi przed sobą przyszłości – żeby każda taka osoba wiedziała, że jest ważna, że jest potrzebna i że świat – także świat nauki – na nią czeka i jest gotów jej bronić.
+  </p>
+</div>
+
+<img src="/assets/img/divider.png" class="divider" alt="">
+
+{% assign subjects = "" | split:"|" %}
+
+{% for lesson in site.lessons %}
+    {% for lesson_subject in lesson.subjects %}
+        {% assign subjects = subjects | push: lesson_subject | uniq %}
+    {% endfor %}
+{% endfor %}
+
+<h2>SCENARIUSZE Lekcji</h2>
+<div class="categories">
+  {% for subject in subjects %}
+    <a href="#{{ subject | slugify }}">{{ subject }}</a> {% unless forloop.last %}{% cycle '·', '•', '∙', '·' %}{% endunless %}
+  {% endfor %}
+</div>
+
+{% for subject in subjects %}
+    <h3 id="{{ subject | slugify }}">{{ subject }}</h3>
+
+    {% assign lessons = site.lessons | where:"subjects",subject %}
+
+    {% for lesson in lessons %}
+        <div class="lesson">
+            <div class="author">{{ lesson.author }}</div>
+            <div class="title">{{ lesson.title }}</div>
+            <div class="description">
+            {{ lesson.content | markdownify}}
+            </div>
+            <div>
+                <a class="download" target="_blank" href="/assets/pdf/{{ lesson.pdf | uri_escape }}">
+                → POBIERZ SCENARIUSZ
+                </a>
+            </div>
+            {% if lesson.pdf2 %}
+                <div>
+                    <a class="download" target="_blank" href="/assets/pdf/{{ lesson.pdf2 | uri_escape }}">
+                        → pobierz materiały
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+</div>
