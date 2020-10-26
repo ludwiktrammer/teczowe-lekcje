@@ -57,7 +57,7 @@ title: Tęczowe Lekcje
             <div class="author">{{ lesson.author }}</div>
             <div class="title">{{ lesson.title }}</div>
             <div class="description">
-            {{ lesson.content | markdownify}}
+            {{ lesson.content | markdownify }}
             </div>
             <div>
                 <a class="download" target="_blank" href="{{ "/assets/pdf/" | relative_url }}{{ lesson.pdf | uri_escape }}">
