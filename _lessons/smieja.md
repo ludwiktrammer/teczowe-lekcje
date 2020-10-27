@@ -1,5 +1,5 @@
 ---
-author: dr hab. Wojciech Śmieja
+author: dr hab. Wojciech Śmieja, prof. ucz.
 title: Inne Przedwiośnie
 subjects:
   - język polski
