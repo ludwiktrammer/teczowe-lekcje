@@ -60,11 +60,13 @@ title: Tęczowe Lekcje
             <div class="description">
             {{ lesson.content | markdownify }}
             </div>
-            <div>
-                <a class="download" target="_blank" href="{{ "/assets/pdf/" | relative_url }}{{ lesson.pdf | uri_escape }}">
-                → POBIERZ SCENARIUSZ
-                </a>
-            </div>
+            {% if lesson.pdf %}
+                <div>
+                    <a class="download" target="_blank" href="{{ "/assets/pdf/" | relative_url }}{{ lesson.pdf | uri_escape }}">
+                    → POBIERZ SCENARIUSZ
+                    </a>
+                </div>
+            {% endif %}
             {% if lesson.pdf2 %}
                 <div>
                     <a class="download" target="_blank" href="{{ "/assets/pdf/" | relative_url }}{{ lesson.pdf2 | uri_escape }}">
