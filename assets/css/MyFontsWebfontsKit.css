@@ -23,6 +23,6 @@
   
 @font-face {
   font-family: 'ChalkHandMarker-Reg';
-  src: url('/assets/fonts/ChalkHandMarker-Reg/font.woff2') format('woff2'), url('/assets/fonts/ChalkHandMarker-Reg/font.woff') format('woff');
+  src: url('../fonts/ChalkHandMarker-Reg/font.woff2') format('woff2'), url('../fonts/ChalkHandMarker-Reg/font.woff') format('woff');
 }
 
