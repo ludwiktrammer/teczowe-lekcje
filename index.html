@@ -39,11 +39,12 @@ title: Tęczowe Lekcje
         {% assign subjects = subjects | push: lesson_subject | uniq %}
     {% endfor %}
 {% endfor %}
+{% assign subjects = subjects | sort_natural %}
 
 <h2>SCENARIUSZE Lekcji</h2>
 <div class="categories">
   {% for subject in subjects %}
-    <a href="#{{ subject | slugify }}">{{ subject }}</a> {% unless forloop.last %}{% cycle '·', '•', '∙', '·' %}{% endunless %}
+    <a href="#{{ subject | slugify }}">{{ subject | replace: " ", "&nbsp;" }}</a> {% unless forloop.last %}{% cycle '·', '•', '∙', '·' %}{% endunless %}
   {% endfor %}
 </div>
 
@@ -71,6 +72,13 @@ title: Tęczowe Lekcje
                     </a>
                 </div>
             {% endif %}
+            {% if lesson.video %}
+            <div>
+                <a class="download" target="_blank" href="{{ lesson.video }}">
+                    → Zobacz materiał wideo
+                </a>
+            </div>
+        {% endif %}
         </div>
     {% endfor %}
 {% endfor %}

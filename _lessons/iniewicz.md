@@ -4,6 +4,7 @@ title: Stres mniejszościowy a zdrowie u osób homoseksualnych i biseksualnych
 subjects:
   - wiedza o społeczeństwie
   - biologia
+  - godzina wychowawcza
 pdf: Konspekt lekcji Stres mniejszosciowy.pdf
 pdf2: Iniewicz Stres mniejszosciowy.pdf
 ---
