@@ -75,12 +75,19 @@ title: Tęczowe Lekcje
                 </div>
             {% endif %}
             {% if lesson.video %}
+                <div>
+                    <a class="download" target="_blank" href="{{ lesson.video }}">
+                        → Zobacz materiał wideo
+                    </a>
+                </div>
+            {% endif %}
+            {% if lesson.presentation %}
             <div>
-                <a class="download" target="_blank" href="{{ lesson.video }}">
-                    → Zobacz materiał wideo
+                <a class="download" target="_blank" href="{{ "/assets/pdf/" | relative_url }}{{ lesson.presentation | uri_escape }}">
+                    → Pobierz prezentację
                 </a>
             </div>
-        {% endif %}
+            {% endif %}
         </div>
     {% endfor %}
 {% endfor %}
